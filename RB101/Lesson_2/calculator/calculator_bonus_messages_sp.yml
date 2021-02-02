@@ -1,0 +1,20 @@
+# prompt messages for calculator bonus application - spanish.
+
+welcome: "Bienvenido a la Calculadora! Introduzca su nombre:"
+valid_name: "Asegúrese de ingresar un nombre válido."
+hi: "Hola"
+first_number: "¿Cuál es el primer número?"
+valid_number: "Hmm ... ¿eso no parece un número válido?"
+second_number: "¿Cuál es el segundo número?"
+operator_prompt: "¿Qué operación te gustaría realizar?
+
+    1) agregar
+    2) restar
+    3) multiplicar
+    4) dividir
+"
+operation_choice: "Debe elegir 1, 2, 3, o 4"
+function_performed: "los dos números..."
+result: "El resultado es"
+recalculate: "¿Desea realizar otro cálculo? (Y para calcular de nuevo)"
+good_bye: "¡Gracias por usar la calculadora! ¡Adiós!"

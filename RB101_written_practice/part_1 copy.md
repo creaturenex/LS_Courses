@@ -1,0 +1,6 @@
+`my_arr` is a nested array, as a result to access the elements in all the nested arrays we must use the `each` method in a nested fashion also. Why? well on `line 3` the `each` method invoked on `my_arr` is making each element accessible as argument ie `|arr|` in the block. Because each element is an array we want to access the elements inside the inner array. As a result the `each` method is invoked on the element or array variable `arr` for each element in the sub array. The block outputs the string object represented as string characters because of the `puts` method and returns `nil`(not used by the block). At the end the whole block then returns the original array reference in variable `my_arr`
+
+
+my_arr is a nested array. as a result to access the elements in all the nest arrays we must use nest each method. why? well on line 3 the each method invoked on my_arr is making each element accessible as argument ie |arr| in the block. Because each element is an array we then want to access the elements in side the inner array that is the element.
+
+As a result each is invoked on the element or array variable arr for each element in the sub array the block outputs the string object or letters in this case, and returns nil for each iteration. The whole block then returns the original nested array.

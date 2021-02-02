@@ -1,0 +1,20 @@
+# prompt messages for calculator bonus application - french.
+
+welcome: "Bienvenue sur Calculator! Entrez votre nom:"
+valid_name: "Assurez-vous d'entrer un nom valide."
+hi: "Salut"
+first_number: "Quel est le premier numéro?"
+valid_number: "Hmm… ça ne ressemble pas à un nombre valide?"
+second_number: "Quel est le deuxième numéro?"
+operator_prompt: "Quelle opération voudriez-vous effectuer?
+
+    1) ajouter
+    2) soustraire
+    3) multiplier
+    4) diviser
+"
+operation_choice: "Doit choisir 1, 2, 3, ou 4"
+function_performed: "les chiffres sont ..."
+result: "Le résultat est"
+recalculate: "Voulez-vous effectuer un autre calcul? (Y calculer à nouveau)"
+good_bye: "Merci d'avoir utilisé la calculatrice! Au revoir!"

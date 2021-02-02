@@ -1,0 +1,16 @@
+# prompt messages for loan calculator application
+
+en:
+  hi: "Welcome to the Loan Calculator!"
+  info: "We need some information from you."
+  valid num: "Please enter a valid number."
+  loan amount: "What is your loan amount?"
+  loan APR rate: "What is the loan Annual Percentate Rate % (APR)?
+
+  (Enter the percentage as follows ie 5 for 5% or 2.5 for 2.5%)"
+  loan duration: "What is the loan duration in years?"
+
+# puts "=> Your monthly payment will be $#{monthly_payment.round(2)} each month for #{loan_duration.to_i * 12} months"
+
+  repeat: "Would you like to perform another calculation? press y/Y or n/N"
+  thanks: "Thank you for using the Loan Calculator! Goodbye!"
