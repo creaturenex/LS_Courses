@@ -131,8 +131,26 @@ class TodoList
     @todos.each { |todo| puts todo}
   end
 
+  #change to mimic, array each in that it returns the original todolist object
+  def each
+    counter = 0
+    while counter < @todos.size
+      yield(@todos[counter]) if block_given?
+      counter +=1
+    end
+    self
+  end
 
-
+  # coded to return a new todolist object
+  def select
+    result = TodoList.new('')
+    counter = 0
+    while counter < @todos.size
+      result.add(item_at(counter)) if yield(item_at(counter))
+      counter += 1
+    end
+    result
+  end
 end
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -147,35 +165,13 @@ list = TodoList.new("Today's Todos")
 
 todo_ary = [todo1, todo2, todo3]
 todo_ary.each { |todo| list.add(todo) }
-list << todo4
 
-list.remove_at(3)
+todo1.done!
 
-list.remove_at(100) # outputs comment > list
+# list.each do |todo|
+#   puts todo
+#   # calls Todo#to_s
+# end
 
-list.add(1) # outputs comment > only todo objects
-
-# list.mark_done_at
-
-list.mark_done_at(0)
-
-list.mark_done_at(3)
-
-list.to_s
-
-
-# ---- Interrogating the list -----
-list.size
-# returns 3
-
-list.first
-# returns todo1, which is the first item in the list
-
-list.last
-# returns todo3, which is the last item in the list
-
-puts list.to_a # still pending
-# returns an array of all items in the list
-
-list.done?
-# returns true if all todos in the list are done, otherwise false
+results = list.select { |todo| todo.done?}
+puts results.inspect

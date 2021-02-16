@@ -131,7 +131,14 @@ class TodoList
     @todos.each { |todo| puts todo}
   end
 
-
+  def each
+    counter = 0
+    while counter < @todos.size
+      yield(@todos[counter]) if block_given?
+      counter +=1
+    end
+    @todos
+  end
 
 end
 
@@ -147,35 +154,30 @@ list = TodoList.new("Today's Todos")
 
 todo_ary = [todo1, todo2, todo3]
 todo_ary.each { |todo| list.add(todo) }
-list << todo4
 
+list << todo4
 list.remove_at(3)
 
-list.remove_at(100) # outputs comment > list
-
-list.add(1) # outputs comment > only todo objects
-
-# list.mark_done_at
-
 list.mark_done_at(0)
-
-list.mark_done_at(3)
-
-list.to_s
-
+list.done!
 
 # ---- Interrogating the list -----
-list.size
-# returns 3
+# puts list.size
+# # returns 3
 
-list.first
-# returns todo1, which is the first item in the list
+# puts list.first
+# # returns todo1, which is the first item in the list
 
-list.last
-# returns todo3, which is the last item in the list
+# puts list.last
+# # returns todo3, which is the last item in the list
 
-puts list.to_a # still pending
-# returns an array of all items in the list
+# puts list.to_a # still pending
+# # returns an array of all items in the list
 
-list.done?
-# returns true if all todos in the list are done, otherwise false
+# puts list.done?
+# # returns true if all todos in the list are done, otherwise false
+
+list.each do |todo|
+  puts todo
+  # calls Todo#to_s
+end
