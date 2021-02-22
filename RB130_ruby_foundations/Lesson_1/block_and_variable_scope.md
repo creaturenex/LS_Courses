@@ -32,3 +32,4 @@ These symbol procs only work with methods that do not take an argument
 ``` ruby
 (&:to_s) = { |n| n.to_s }
 ```
+`&` tells Ruby to convert this object to a block, it is expecting the object to be a `Proc` object. If it is not a `Proc` object, it will try to convert it by using #to_proc. If it fails to convert we will get an Error, else the `Proc` is converted to a block.
