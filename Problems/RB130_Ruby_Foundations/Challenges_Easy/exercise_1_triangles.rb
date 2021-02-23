@@ -48,37 +48,36 @@ class Triangle
 
   def initialize(side1, side2, side3)
     @triangle = [side1, side2, side3]
-  end
 
-  def kind
-    raises_error (ArgumentError) do
-      side_count = triangle.uniq.count
-      case side_count
-      when 1 then 'equilateral'
-      when 2 then 'isosceles'
-      when 3 then 'scalene'
-      then
+    side_uniq = triangle.uniq.sort
+    side_count = side_uniq.count
+
+    case side_count
+    when 1
+      raise ArgumentError if side_uniq.include?(0)
+    when 2
+      if triangle.count(side_uniq[0]) == 2 # low num i
+        raise ArgumentError if (2 * side_uniq[0]) < side_uniq[1]
+      elsif triangle.count(side_uniq[1]) == 2
+        #p side_uniq.count(side_uniq[1])
+        # raise ArgumentError if (2 * side_uniq[1]) > 2 * side_uniq[0]
       end
+    when 3
+      raise ArgumentError unless (side_uniq[0] + side_uniq[1]) >= side_uniq[2]
+      raise ArgumentError if side_uniq.any?{ |value| value.negative?}
     end
   end
 
-  def no_size_is_illegal
-    @triangle.any?{ |value| value.zero?}
-  end
-
-  def negative_size_is_illegal
-    @triangle.any?{ |value| value.negative?}
-  end
-
-  def size_inequality_is_illegal
-  end
-
-  def
-  end
-
-  def
-
-
+  def kind
+    side_count = triangle.uniq.count
+    case side_count
+    when 1 then 'equilateral'
+    when 2 then 'isosceles'
+    when 3 then 'scalene'
+    end
   end
 
 end
+
+# Triangle.new(10,10,2)
+# Triangle.new(1,1,3)
