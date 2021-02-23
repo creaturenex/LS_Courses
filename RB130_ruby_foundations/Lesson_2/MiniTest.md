@@ -61,7 +61,7 @@ instance method to compare both objects. It must be defined so Ruby know what
  exactly to compare.
 
 
-assert_equals(arg1 , arg2)
+assert_equal(arg1 , arg2)
 assert_same
 
 assert_raises(error type) {block, code that will case an error}
