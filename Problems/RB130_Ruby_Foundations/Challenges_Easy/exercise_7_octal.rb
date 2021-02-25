@@ -1,57 +1,29 @@
-require 'prime'
-
-class PerfectNumber
+class Octal
+  attr_accessor :num
 
   def initialize(num)
-    @num = num
+    @num = num.to_i.digits
   end
 
-  def classify
-    raise StandardError.new if @num < 0
-      if Prime.prime?(@num)
-        'deficient'
-      else
-        aliquot = aliquot_ary.reduce(:+)
-        case
-        when aliquot == @num then 'perfect'
-        when aliquot > @num then 'abundant'
-        when aliquot < @num then 'deficient'
-        end
-      end
+  def to_decimal
+    sum = []
+    p num
+    num.each_with_index { |digi, idx| digi >= 8 ? 0 : sum << digi * (8**idx) }
+    sum.sum
   end
-
-  def aliquot_ary
-    result = (1...@num).to_a.select { |i| @num % i == 0 }
-  end
-
-  def self.classify(num)
-    PerfectNumber.new(num).classify
-  end
-
 end
 
-# LS Solution
-# class PerfectNumber
-#   def self.classify(number)
-#     raise StandardError.new if number < 1
-#     sum = sum_of_factors(number)
+=begin
+Finished in 0.001800s, 8331.0515 runs/s, 8331.0515 assertions/s.
 
-#     if sum == number
-#       'perfect'
-#     elsif sum > number
-#       'abundant'
-#     else
-#       'deficient'
-#     end
-#   end
+  1) Failure:
+OctalTest#test_6789_is_seen_as_invalid_and_returns_0 [/home/oscar/LaunchSchool/LS_Courses/Problems/RB130_Ruby_Foundations/Challenges_Easy/exercise_7_octal_test.rb:61]:
+Expected: 0
+  Actual: 3520
 
-#   class << self
-#     private
+  2) Failure:
+OctalTest#test_234abc_is_seen_as_invalid_and_returns_0 [/home/oscar/LaunchSchool/LS_Courses/Problems/RB130_Ruby_Foundations/Challenges_Easy/exercise_7_octal_test.rb:76]:
+Expected: 0
+  Actual: 156
 
-#     def sum_of_factors(number)
-#       (1...number).select do |possible_divisor|
-#         number % possible_divisor == 0
-#       end.sum
-#     end
-#   end
-# end
+=end

@@ -1,57 +1,32 @@
-require 'prime'
+=begin
 
-class PerfectNumber
+Implement octal to decimal conversion. Given an octal input string, your program should produce a decimal output. Treat invalid input as octal 0.
 
-  def initialize(num)
-    @num = num
-  end
+Note: Implement the conversion yourself. Don't use any built-in or library methods that perform the necessary conversions for you. In this exercise, the code necessary to perform the conversion is what we're looking for,
 
-  def classify
-    raise StandardError.new if @num < 0
-      if Prime.prime?(@num)
-        'deficient'
-      else
-        aliquot = aliquot_ary.reduce(:+)
-        case
-        when aliquot == @num then 'perfect'
-        when aliquot > @num then 'abundant'
-        when aliquot < @num then 'deficient'
-        end
-      end
-  end
+About Octal (Base-8)
 
-  def aliquot_ary
-    result = (1...@num).to_a.select { |i| @num % i == 0 }
-  end
+Decimal is a base-10 system. A number 233 in base 10 notation can be understood as a linear combination of powers of 10:
 
-  def self.classify(num)
-    PerfectNumber.new(num).classify
-  end
+The rightmost digit gets multiplied by 100 = 1
+The next digit gets multiplied by 101 = 10
+The digit after that gets multiplied by 102 = 100
+The digit after that gets multiplied by 103 = 1000
+...
+The n*th* digit gets multiplied by 10n-1.
+All of these values are then summed.
 
-end
+Thus:
+  233 # decimal
+= 2*10^2 + 3*10^1 + 3*10^0
+= 2*100  + 3*10   + 3*1
+Octal numbers are similar, but the use powers of 8 instead of powers of 10.
 
-# LS Solution
-# class PerfectNumber
-#   def self.classify(number)
-#     raise StandardError.new if number < 1
-#     sum = sum_of_factors(number)
+Thus:
+  233 # octal
+= 2*8^2 + 3*8^1 + 3*8^0
+= 2*64  + 3*8   + 3*1
+= 128   + 24    + 3
+= 155
 
-#     if sum == number
-#       'perfect'
-#     elsif sum > number
-#       'abundant'
-#     else
-#       'deficient'
-#     end
-#   end
-
-#   class << self
-#     private
-
-#     def sum_of_factors(number)
-#       (1...number).select do |possible_divisor|
-#         number % possible_divisor == 0
-#       end.sum
-#     end
-#   end
-# end
+=end
