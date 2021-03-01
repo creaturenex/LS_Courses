@@ -1,51 +1,33 @@
-class Octal
-  attr_accessor :num, :sum
+=begin
+Sum of Multiples
 
-  def initialize(num)
-    @sum = 0
-    clean_up(num)
-  end
+Write a program that, given a natural number and a set of one or more other numbers, can find the sum of all the multiples of the numbers in the set that are less than the first number. If the set of numbers is not given, use a default set of 3 and 5.
 
-  def clean_up(num)
-    num.match?(/\D/) ? @num = nil : @num = num.to_i.digits
-  end
+For instance, if we list all the natural numbers up to, but not including, 20 that are multiples of either 3 or 5, we get 3, 5, 6, 9, 10, 12, 15, and 18. The sum of these multiples is 78.
 
-  def to_decimal
-    non_octal = [8, 9]
-    if num.nil? || num.any? { |i| (8..9).include?(i) }
-      sum
-    else
-      num.each_with_index { |digi, idx| self.sum += digi * (8**idx) }
-      sum
-    end
-  end
+P:roblem
+Give a natural number and a set onf one or more numbers
+return the sum of all the multiples of the number in the set that are less than the first natural number
 
-end
+if a second set of number is not provided use the default set of 3 and 5
 
-# LS solution
-class Octal
-  attr_reader :number
+E:xamples
+- see tests
+- For instance, if we list all the natural numbers up to, but not including, 20 that are multiples of either 3 or 5, we get 3, 5, 6, 9, 10, 12, 15, and 18. The sum of these multiples is 78.
 
-  def initialize(str)
-    @number = str
-  end
+- #to is a class method
 
-  def to_decimal
-    return 0 unless valid_octal?(number)
+new instance accepts a parameter to defined which the multiples are, if no muliple are give 3 and 5 are the default
 
-    arr_digits = number.to_i.digits
 
-    new_number = 0
-    arr_digits.each_with_index do |num, exponent|
-      new_number += (num * (8 ** exponent))
-    end
 
-    new_number
-  end
+D:ata
+input
 
-  private
+output
 
-  def valid_octal?(num)
-    num.chars.all? {|n| n =~ /[0-7]/}
-  end
-end
+
+A:lgorithm
+
+C:ode
+=end

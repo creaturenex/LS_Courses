@@ -1,51 +1,47 @@
-class Octal
-  attr_accessor :num, :sum
+require 'minitest/autorun'
+require_relative 'exercise_8_multiples'
 
-  def initialize(num)
-    @sum = 0
-    clean_up(num)
+class SumTest < Minitest::Test
+  def test_sum_to_1
+    assert_equal 0, SumOfMultiples.to(1)
   end
 
-  def clean_up(num)
-    num.match?(/\D/) ? @num = nil : @num = num.to_i.digits
+  def test_sum_to_3
+
+    assert_equal 3, SumOfMultiples.to(4)
   end
 
-  def to_decimal
-    non_octal = [8, 9]
-    if num.nil? || num.any? { |i| (8..9).include?(i) }
-      sum
-    else
-      num.each_with_index { |digi, idx| self.sum += digi * (8**idx) }
-      sum
-    end
+  def test_sum_to_10
+
+    assert_equal 23, SumOfMultiples.to(10)
   end
 
-end
+  def test_sum_to_100
 
-# LS solution
-class Octal
-  attr_reader :number
-
-  def initialize(str)
-    @number = str
+    assert_equal 2_318, SumOfMultiples.to(100)
   end
 
-  def to_decimal
-    return 0 unless valid_octal?(number)
-
-    arr_digits = number.to_i.digits
-
-    new_number = 0
-    arr_digits.each_with_index do |num, exponent|
-      new_number += (num * (8 ** exponent))
-    end
-
-    new_number
+  def test_sum_to_1000
+    assert_equal 233_168, SumOfMultiples.to(1000)
   end
 
-  private
+  def test_configurable_7_13_17_to_20
 
-  def valid_octal?(num)
-    num.chars.all? {|n| n =~ /[0-7]/}
+    assert_equal 51, SumOfMultiples.new(7, 13, 17).to(20)
+  end
+
+  def test_configurable_4_6_to_15
+
+    assert_equal 30, SumOfMultiples.new(4, 6).to(15)
+  end
+
+  def test_configurable_5_6_8_to_150
+
+    assert_equal 4419, SumOfMultiples.new(5, 6, 8).to(150)
+  end
+
+  def test_configurable_43_47_to_10000
+
+    assert_equal 2_203_160, SumOfMultiples.new(43, 47).to(10_000)
   end
 end
