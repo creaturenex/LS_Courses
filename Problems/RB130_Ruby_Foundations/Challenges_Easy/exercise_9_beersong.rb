@@ -6,28 +6,15 @@ class BeerSong
   def self.verses(start, finish)
     verses = []
     count = start
-    (start - finish).times do
+    (finish..start).to_a.count.times do
       verses << verse(count)
       count -= 1
     end
-    verses.join("n/")
-    # originally did not use array
+    verses.join("\n")
   end
 
-  # add array join
   def self.lyrics
-    count = 99
-    puts "<<-SONG"
-    100.times do
-      if count == 0
-        zero_bottles
-      else
-        x_bottles(count)
-        puts ''
-      end
-      count -= 1
-    end
-    puts "SONG"
+    verses(99,0)
   end
 
   def self.x_bottles(num)
@@ -50,6 +37,3 @@ class BeerSong
   end
 
 end
-
-
-p BeerSong.verses(99, 98)

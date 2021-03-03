@@ -1,23 +1,28 @@
-class SumOfMultiples
-  attr_accessor :multiples
+=begin
+Beer Song
 
-  def initialize(first = 3, second = 5, *args)
-    ary = [first, second, *args]
-    @multiples = ary
-  end
+Write a program that can generate the lyrics of the 99 Bottles of Beer song. See the test suite for the entire song.
 
-  def to(num)
-    multiple_set = [0]
-    (1...num).each do |digi|
-    multiples.each do |multi|
-      digi % multi == 0 ? multiple_set << digi : next
-      end
-    end
-    multiple_set.uniq.sum
-  end
+P
+Write a program that can generate the lyrics of the 99 Bottles of Beer song. See the test suite for the entire song.
 
-  def self.to(num)
-    SumOfMultiples.new.to(num)
-  end
+E
+see tests
 
-end
+D
+input
+integer
+output
+string that incorportates inpule for line of song
+
+Algorithm, how to solve
+
+
+Code
+
+
+
+
+
+
+=end
