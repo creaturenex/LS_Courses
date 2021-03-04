@@ -31,3 +31,5 @@ a.class.oldname
 b = Robot.new
 p b.name
 b.class.oldname
+
+# continue not exactly finished, this works but need to compare to LS
