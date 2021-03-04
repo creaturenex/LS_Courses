@@ -6,7 +6,6 @@ class Robot
     @name = generate_name
     @name = generate_name if @@oldname.include? name
     @@oldname << name
-
   end
 
   def generate_name
@@ -16,20 +15,30 @@ class Robot
   def reset
     initialize
   end
-
-  def self.oldname
-    p @@oldname
-  end
-
 end
 
+#LS Solution
+# class Robot
+#   @@names = []
 
-a = Robot.new
-p a.name
-a.class.oldname
+#   def name
+#     return @name if @name
+#     @name = generate_name while @@names.include?(@name) || @name.nil?
+#     @@names << @name
+#     @name
+#   end
 
-b = Robot.new
-p b.name
-b.class.oldname
+#   def reset
+#     @@names.delete(@name)
+#     @name = nil
+#   end
 
-# continue not exactly finished, this works but need to compare to LS
+#   private
+
+#   def generate_name
+#     name = ''
+#     2.times { name << rand(65..90).chr }
+#     3.times { name << rand(0..9).to_s }
+#     name
+#   end
+# end
