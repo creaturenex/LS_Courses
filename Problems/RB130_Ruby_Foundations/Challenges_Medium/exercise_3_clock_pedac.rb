@@ -1,44 +1,50 @@
-class Robot
-  @@oldname = []
-  attr_accessor :name
+=begin
+Clock
+Create a clock that is independent of date.
 
-  def initialize
-    @name = generate_name
-    @name = generate_name if @@oldname.include? name
-    @@oldname << name
-  end
+You should be able to add minutes to and subtract minutes from the time represented by a given clock object. Two clock objects that represent the same time should be equal to each other.
 
-  def generate_name
-    ('AA'..'ZZ').to_a.sample + ('001'..'999').to_a.sample
-  end
+You may not use any built-in date or time functionality; just use arithmetic operations.
 
-  def reset
-    initialize
-  end
-end
+Problem
+Create a clock that is independent of date.
 
-#LS Solution
-# class Robot
-#   @@names = []
+You should be able to add minutes to and subtract minutes from the time represented by a given clock object. Two clock objects that represent the same time should be equal to each other.
 
-#   def name
-#     return @name if @name
-#     @name = generate_name while @@names.include?(@name) || @name.nil?
-#     @@names << @name
-#     @name
-#   end
+You may not use any built-in date or time functionality; just use arithmetic operations.
 
-#   def reset
-#     @@names.delete(@name)
-#     @name = nil
-#   end
+Examples
+- see test
 
-#   private
+Data
+input - integer
 
-#   def generate_name
-#     name = ''
-#     2.times { name << rand(65..90).chr }
-#     3.times { name << rand(0..9).to_s }
-#     name
-#   end
-# end
+output
+
+Algorithm
+create class Clock
+- create instance
+  - #at(arg, arg =00), first arg required, second default to zero
+  - +() to add time
+  - -() to subtract time
+
+- time is measure in military time ie 0 -23hrs
+- first arg must be between 0 -23
+- second arg equals minute
+  - if min < 59 then min = clock min
+  else min> 59 then min/60 divmod ie first num gets added to hour and second num becomes minute
+
+hour = first arg
+min = second arg
+
+if second arg > 60 then divmod, first num is added to hour and second num becomes minute
+
+- to_s should return string representation of clock
+- two clock object with the same time should be equal to each other
+ - does this mean make an equal method?
+   clock == clock, should be clock.to_s == clock.to_s
+
+Code
+- see file
+
+=end
