@@ -1,0 +1,9 @@
+# How to automate user input for testing
+
+
+variable = StringIO.new("text\n")
+# notice the new line character if our codes uses puts
+# make sure to convert numbers to float in your code if you wanter to confer string number to actual numeric numbers
+
+method(input: &stdin) # used in your actual code
+method(input: variable) # used in your test script
