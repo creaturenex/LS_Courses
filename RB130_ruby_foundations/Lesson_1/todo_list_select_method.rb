@@ -175,3 +175,5 @@ todo1.done!
 
 results = list.select { |todo| todo.done?}
 puts results.inspect
+
+puts list

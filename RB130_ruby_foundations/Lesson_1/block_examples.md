@@ -49,13 +49,7 @@ def reduce1(array)
     acc = yield(acc, array[counter])
     counter += 1
   end
-
   acc
-
 end
-
-
-
-
 
 reduce1(a){ |acc, num| acc + num }

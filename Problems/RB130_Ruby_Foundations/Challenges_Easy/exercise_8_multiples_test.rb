@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'minitest/pride'
 require_relative 'exercise_8_multiples'
 
 class SumTest < Minitest::Test

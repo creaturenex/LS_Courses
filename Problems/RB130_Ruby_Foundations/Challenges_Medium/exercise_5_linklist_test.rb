@@ -11,7 +11,7 @@ class LinkedListTest < Minitest::Test
   def test_element_tail
 
     element = Element.new(1)
-    assert element.tail?
+    assert element.first
   end
 
   def test_element_next_default
