@@ -89,3 +89,40 @@ at in more detail later in this lesson.
 Depending on the type of communication required, either method is a valid practice. This is an additional communication rules allows for more reliable communication.
 
 ## Network Reliability
+Protocol communication from the Ethernet level up to the Network level has inherently is unreliable, data will be dropped if it corrupted during it travel and there is no mechanism to request the dropped data.
+
+### Building a Reliable Protocol
+
+**Problem 1**</br>
+First issue, data can be corrupted or lost.
+
+**Solution**</br>
+Use an acknowledgement message.
+
+**Possible Problems**</br>
+- The recipient might never get a message so it will not send a acknowledgement.
+- The acknowledgement might itself be corrupted or lost!
+
+**Problem 2**</br>
+What if the acknowledgement is not received?
+
+**Solution**</br>
+Re-send the message if acknowledgement not received within a certain time-frame.
+
+**Possible Problems**</br>
+- Sender sends one message at a time, and sets a timeout
+- If message received, receiver sends an acknowledgement
+- When acknowledgement is received, sender sends next message
+- If acknowledgement not received before the timeout expires, sender assumes either the message or the acknowledgement went missing and sends the same message again
+
+**Problem 2**</br>
+What if the acknowledgement is not received?
+
+**Solution**</br>
+Re-send the message if acknowledgement not received within a certain time-frame.
+
+**Possible Problems**</br>
+- Sender sends one message at a time, and sets a timeout
+- If message received, receiver sends an acknowledgement
+- When acknowledgement is received, sender sends next message
+- If acknowledgement not received before the timeout expires, sender assumes either the message or the acknowledgement went missing and sends the same message again
