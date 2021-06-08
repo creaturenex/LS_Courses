@@ -1,45 +1,5 @@
 # Network Foundations
 
-## Study Guide
-
-You should have a good understanding of the following topics before continuing on to take the assessment.
-
-## The Internet
-
-- Have a broad understanding of what the internet is and how it works
-- Understand the characteristics of the physical network, such as latency and bandwidth
-- Have a basic understanding of how lower level protocols operate
-- Know what an IP address is and what a port number is
-- Have an understanding of how DNS works
-- Understand the client-server model of web interactions, and the role of HTTP as a protocol within that model
-
-## TCP & UDP
-
-- Have a clear understanding of the TCP and UDP protocols, their similarities and differences
-- Have a broad understanding of the three-way handshake and its purpose
-- Have a broad understanding of flow control and congestion avoidance
-
-## URLs
-
-- Be able to identify the components of a URL, including query strings
-- Be able to construct a valid URL
-- Have an understanding of what URL encoding is and when it might be used
-
-## HTTP and the Request/Response Cycle
-
-- Be able to explain what HTTP requests and responses are, and identify the components of each
-- Be able to describe the HTTP request/response cycle
-- Be able to explain what status codes are, and provide examples of different status code types
-- Understand what is meant by 'state' in the context of the web, and be able to explain some techniques that are used to simulate state
-- Explain the difference between `GET` and `POST`, and know when to choose each
-
-## Security
-
-- Have an understanding of various security risks that can affect HTTP, and be able to outline measures that can be used to mitigate against these risks
-- Be aware of the different services that TLS can provide, and have a broad understanding of each of those services
-
-
-
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## The Internet
@@ -64,21 +24,21 @@ The Internet Protocol (IP) is a key part of the functionality of the internet. M
 
 ### Summary
 
-- The internet is a vast *network of networks*. It is comprised of both the *network infrastructure* itself (devices, routers, switches, cables, etc) and the *protocols* that enable that infrastructure to function.
-- Protocols are *systems of rules*. Network protocols are systems of rules governing the exchange or transmission of data over a network.
-- Different types of protocol are concerned with different aspects of network communication. It can be useful to think of these different protocols as operating at particular 'layers' of the network.
-- *Encapsulation* is a means by which protocols at different network layers can work together.
-- Encapsulation is implemented through the use of *Protocol Data Units* (PDUs). The PDU of a protocol at one layer, becomes the data payload of the PDU of a protocol at a lower layer.
-- The *physical network* is the tangible infrastructure that transmits the electrical signals, light, and radio waves which carry network communications.
-- *Latency is a measure of delay*. It indicates the amount of time it takes for data to travel from one point to another.
-- *Bandwidth is a measure of capacity*. It indicates the amount of data that can be transmitted in a set period of time.
-- *Ethernet* is a set of standards and protocols that enables *communication between devices on a local network*.
-- Ethernet uses a Protocol Data Unit called a Frame.
-- Ethernet uses *MAC addressing* to identify devices connected to the local network.
-- The *Internet Protocol* (IP) is the predominant protocol used for *inter-network communication*.
-- There are two versions of IP currently in use: IPv4 and IPv6.
-- The *Internet Protocol* uses a system of addressing (IP Addressing) to *direct data between one device and another across networks*.
-- IP uses a Protocol Data Unit called a Packet.
+- [x] The internet is a vast *network of networks*. It is comprised of both the *network infrastructure* itself (devices, routers, switches, cables, etc) and the *protocols* that enable that infrastructure to function.
+- [x] Protocols are *systems of rules*. Network protocols are systems of rules governing the exchange or transmission of data over a network.
+- [x] Different types of protocol are concerned with different aspects of network communication. It can be useful to think of these different protocols as operating at particular 'layers' of the network.
+- [x] *Encapsulation* is a means by which protocols at different network layers can work together.
+- [x] Encapsulation is implemented through the use of *Protocol Data Units* (PDUs). The PDU of a protocol at one layer, becomes the data payload of the PDU of a protocol at a lower layer.
+- [x] The *physical network* is the tangible infrastructure that transmits the electrical signals, light, and radio waves which carry network communications.
+- [x] *Latency is a measure of delay*. It indicates the amount of time it takes for data to travel from one point to another.
+- [x] *Bandwidth is a measure of capacity*. It indicates the amount of data that can be transmitted in a set period of time.
+- [x] *Ethernet* is a set of standards and protocols that enables *communication between devices on a local network*.
+- [x] Ethernet uses a Protocol Data Unit called a Frame.
+- [x] Ethernet uses *MAC addressing* to identify devices connected to the local network.
+- [x] The *Internet Protocol* (IP) is the predominant protocol used for *inter-network communication*.
+- [x] There are two versions of IP currently in use: IPv4 and IPv6.
+- [x] The *Internet Protocol* uses a system of addressing (IP Addressing) to *direct data between one device and another across networks*.
+- [x] IP uses a Protocol Data Unit called a Packet.
 
 ## The Transport Layer
 
@@ -98,18 +58,18 @@ As with any protocol or technology, TCP and UDP are the result of many different
 
 ### Summary
 
-- *Multiplexing* and *demultiplexing* provide for the transmission of *multiple signals over a single channel*
-- Multiplexing is enabled through the use of *network ports*
-- Network sockets can be thought of as a *combination of IP address and port number*
+- [x] *Multiplexing* and *demultiplexing* provide for the transmission of *multiple signals over a single channel*
+- [x] Multiplexing is enabled through the use of *network ports*
+- [x] Network sockets can be thought of as a *combination of IP address and port number*
 - At the *implementation level*, sockets can also be *socket objects*
 - The underlying network is *inherently unreliable*. If we want reliable data transport we need to implement a system of rules to enable it.
 - *TCP* is a *connection-oriented* protocol. It establishes a connection using the *Three-way-handshake*
 - TCP provides reliability through *message acknowledgement* and *retransmission*, and *in-order delivery*.
-- TCP also provides *Flow Control* and *Congestion Avoidance*
-- The main *downsides of TCP* are the *latency overhead of establishing a connection*, and the potential *Head-of-line blocking* as a result of in-order delivery.
+- [x] TCP also provides *Flow Control* and *Congestion Avoidance*
+- [x] The main *downsides of TCP* are the *latency overhead of establishing a connection*, and the potential *Head-of-line blocking* as a result of in-order delivery.
 - *UDP* is a very simple protocol compared to TCP. It provides *multiplexing*, but no reliability, no in-order delivery, and no congestion or flow control.
 - *UDP* is *connectionless*, and so doesn't need to establish a connection before it starts sending data
-- Although it is unreliable, the *advantage of UDP* is *speed* and *flexibility*.
+- [x] Although it is unreliable, the *advantage of UDP* is *speed* and *flexibility*.
 
 ## Intro to HTTP
 
